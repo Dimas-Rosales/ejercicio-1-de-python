@@ -1,0 +1,251 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNlK8PYVhjNNdDrt4ZjMEZ3",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Dimas-Rosales/ejercicio-1-de-python/blob/main/ejercicio%20de%20python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "desarolle un algoritmo en python que permita obtener los descuento IIIS,AFP,vacaciones,aguinaldo etc uno para empresa y otro para personas favor investigue los datos correspondientes segun la ley. el usuario debera ingresar el sueldo y que el sistema le diga el valor neto a pagarle y las deduciones.(30%) \n",
+        "\n",
+        "para empresas\n"
+      ],
+      "metadata": {
+        "id": "ruAR22TGcjSr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R_K3qUNIchvp",
+        "outputId": "f4e400c6-f5ba-4480-fc11-2bad3859357a"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "el salario es de: 180000\n"
+          ]
+        }
+      ],
+      "source": [
+        "empresa = float(input('el salario es de: '))\n",
+        "ISSS = empresa * 0.075\n",
+        "AFP = empresa * 0.015\n",
+        "VCN = empresa * 0.030\n",
+        "AGN = empresa * 0.050\n",
+        "desc = (ISSS + AFP)\n",
+        "aumen = ( VCN + AGN)\n",
+        "salario = empresa - (ISSS + AFP) + (VCN + AGN)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('el descuentode AFP es de:',AFP,'el descuento de:',ISSS,'el aumento por trabajar en vacaciones es de:',VCN,'el aumentode su aguinaldo es de:',AGN)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UYugRDu2q0BL",
+        "outputId": "4e1f7090-600c-4c39-c808-e229cdcf32ba"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "el descuentode AFP es de: 2700.0 el descuento de: 13500.0 el aumento por trabajar en vacaciones es de: 5400.0 el aumentode su aguinaldo es de: 9000.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "if (salario <= 100000.00):\n",
+        "  print('su salario es de:',salario)\n",
+        "  print('esta libre de impuestos ISR')\n",
+        "\n",
+        "elif(salario <= 150000.00):\n",
+        "  tramoII = salario * 0.10\n",
+        "  salariorenta = (salario - tramoII)\n",
+        "  print('el ISR total a pagar es de:',tramoII)\n",
+        "  print('su salario es de:',salariorenta)\n",
+        "\n",
+        "elif(salario <= 200000.00):\n",
+        "  tramoIII = salario * 0.20\n",
+        "  salariorenta = (salario - tramoIII)\n",
+        "  print('el ISR a pagar es de:',tramoIII)\n",
+        "  print('su salario es de:',salariorenta)\n",
+        "\n",
+        "elif(salario >= 200000.00):\n",
+        "  tramoIV = salario * 0.30 \n",
+        "  salariorenta =(salario - tramoIV)    \n",
+        "  print('el ISR a pagar es de:',tramoIV)\n",
+        "  print('su salario es de:',salariorenta)\n",
+        "\n",
+        "else:\n",
+        "  print('esta libre de impuesto :)')  "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PBs_NwF4sT0g",
+        "outputId": "d0ee7b53-51bd-4061-8101-694d49d040e1"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "su salario es de: 17820.0\n",
+            "esta libre de impuestos ISR\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "para persona segunda parte del ejercicio"
+      ],
+      "metadata": {
+        "id": "aIMQz8P2xPTI"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "salario = float(input('su salario es de:'))\n",
+        "ISSS = salario *0.003\n",
+        "AFP = salario *0.0625\n",
+        "VCN = salario *0.025\n",
+        "AGN = salario *0.010\n",
+        "desc = (ISSS + AFP)\n",
+        "aumen = (VCN + AGN)\n",
+        "salario = salario - (ISSS + AFP) + (VCN + AGN)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7auyyN4ZxOru",
+        "outputId": "2f70d7c6-29bb-4908-f7fd-a9811936fe04"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "su salario es de:800\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('el descuento de AFP es de:',AFP,'el descuento de ISSS es de:',ISSS,'el aumento por trabajar en vacaciones es de:',VCN,\n",
+        "      'el aumento por su aguinaldo es de:',AGN,)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "emZwPLl0zQvg",
+        "outputId": "32c08755-bcab-4feb-84d1-3e23dbe9da1e"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "el descuento de AFP es de: 50.0 el descuento de ISSS es de: 2.4 el aumento por trabajar en vacaciones es de: 20.0 el aumento por su aguinaldo es de: 8.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "if (salario <= 520.00):\n",
+        "  print('su salario es de:',salario)\n",
+        "  print('esta libre de impuesto ISR') \n",
+        "\n",
+        "elif(salario <= 900.00):\n",
+        "  tramoII = salario *0.10\n",
+        "  salariorenta = (salario - tramoII)\n",
+        "  print('el ISR total a pagar es de:',tramoII)\n",
+        "  print('su salario es de:',salariorenta)\n",
+        "\n",
+        "elif(salario <= 2000.00):\n",
+        "  tramoIII = salario *0,20\n",
+        "  salariorenta = (salario - tramoIII)\n",
+        "  print('el ISR total a pagar es de:',tramoIII)\n",
+        "  print('su salario es de:',salariorenta)\n",
+        "\n",
+        "elif(salario >= 2000):\n",
+        "  tramoIV = salario *0.30 \n",
+        "  salariorenta = (salario - tramoIV)\n",
+        "  print('el ISR total a pagar es de:',tramoIV)\n",
+        "  print('su salario es de:',salariorenta)\n",
+        "\n",
+        "else:\n",
+        "  print('esta libre de impuesto ISR')  \n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9BslwAvj0Mko",
+        "outputId": "3a30f6e2-c375-4da1-ec69-815287b324d7"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "el ISR total a pagar es de: 77.56\n",
+            "su salario es de: 698.04\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
